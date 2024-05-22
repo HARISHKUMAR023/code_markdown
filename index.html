@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Generator</title>
+   <link rel="stylesheet" href="./assets/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Markdown Code Snippet Generator</h1>
+            <form id="markdownForm">
+                <label for="codeTitle">Code Title:</label><br>
+                <input type="text" id="codeTitle" name="codeTitle"><br><br>
+                <label for="codeTitle">Code Description:</label><br>
+                <textarea  id="codedescription" name="codedescription" ></textarea><br><br>
+                <label for="codeSnippet">Code Snippet:</label><br>
+                <textarea id="codeSnippet" name="codeSnippet"></textarea><br><br>
+                <label for="fileName">File Name:</label><br>
+                <input type="text" id="fileName" name="fileName"><br><br>
+                <input type="button" class="btn" value="Generate Markdown" onclick="generateMarkdown()">
+                <input type="button" class="btn-download" value="Download Markdown" onclick="downloadMarkdown()">
+                </form>
+                </div>
+                <div class="preview-container">
+                    <h1>Markdown Preview</h1>
+                    <div id="markdownPreview">Your Markdown preview will appear here...</div>
+                </div>
+                </div>
+                
+                <script>
+                    let markdownContent = '';
+
+                    function generateMarkdown() {
+                        const title = document.getElementById('codeTitle').value;
+                        const description = document.getElementById('codedescription').value;
+                        const snippet = document.getElementById('codeSnippet').value;
+                        if (!title || !description || !snippet) {
+                            alert('Please fill in all fields.');
+                            return;
+                        }
+                    
+                        markdownContent = `# ${title}\n\n${description}\n\n\`\`\`\n${snippet}\n\`\`\``;
+                    
+                        document.getElementById('markdownPreview').innerText = markdownContent;
+                    }
+                    
+                    function downloadMarkdown() {
+                        const fileName = document.getElementById('fileName').value || 'code_snippet';
+                        const blob = new Blob([markdownContent], { type: 'text/markdown' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `${fileName}.md`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }
+                </script>
+                </body>
+                </html>
