@@ -1,3 +1,4 @@
+![Logo](assets/coder_markdown.svg)
 # Markdown Code Snippet Generator
 
 This tool allows you to create Markdown formatted code snippets. You can input a title, description, and the code snippet itself. The tool will generate the Markdown version of your code snippet, which you can preview and download as a Markdown file. This is particularly useful for developers who want to share their code in a readable and standardized format.
