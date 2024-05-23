@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Generator</title>
+    <title>Markdown Code Snippet Generator</title>
    <link rel="stylesheet" href="./assets/index.css">
    <link rel="shortcut icon" href="./assets/coder_markdown.svg" type="image/x-icon">
+
+
+     <!-- SEO Meta Tags -->
+     <meta name="description" content="Generate Markdown code snippets with ease.">
+     <meta name="keywords" content="Markdown, Code, Snippet, Generator">
+     <meta name="author" content="Harishkumar">
+   
 </head>
 <body>
+    <nav></nav>
     <div class="container">
         <div class="form-container">
             <div class="navbar">
-                <img src="./assets/coder_markdown.svg" alt="">
+                <img src="./assets/coder_markdown.svg" alt="logo of Markdown Code Snippet Generato">
             <h1>Markdown Code Snippet Generator</h1>
             </div>
            
@@ -33,35 +41,18 @@
                     <div id="markdownPreview">Your Markdown preview will appear here...</div>
                 </div>
                 </div>
-                
-                <script>
-                    let markdownContent = '';
 
-                    function generateMarkdown() {
-                        const title = document.getElementById('codeTitle').value;
-                        const description = document.getElementById('codedescription').value;
-                        const snippet = document.getElementById('codeSnippet').value;
-                        if (!title || !description || !snippet) {
-                            alert('Please fill in all fields.');
-                            return;
-                        }
-                    
-                        markdownContent = `# ${title}\n\n${description}\n\n\`\`\`\n${snippet}\n\`\`\``;
-                    
-                        document.getElementById('markdownPreview').innerText = markdownContent;
-                    }
-                    
-                    function downloadMarkdown() {
-                        const fileName = document.getElementById('fileName').value || 'code_snippet';
-                        const blob = new Blob([markdownContent], { type: 'text/markdown' });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = `${fileName}.md`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                    }
-                </script>
+                
+
+                <!-- ========== Start jquery ========== -->
+                <script src="/assets/js/jquery-3.7.1.min.js"></script>
+                <!-- ========== End jquery ========== -->
+                <!-- ========== Start codermardown js file ========== -->
+                <script src="/assets/js/mardown.js"></script>
+                <!-- ========== End codermardown js file ========== -->
+                
+             
+             
+               
                 </body>
                 </html>
