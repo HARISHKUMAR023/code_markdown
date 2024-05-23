@@ -1,18 +1,27 @@
-/* Error: Expected expression.
- *   ,
- * 4 |     background-color: ;
- *   |                       ^
- *   '
- *   assets\scss\layouts\_navbar.scss 4:23  @import
- *   assets\scss\main.scss 9:9              root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a   \2577 \a 4 \2502      background-color: ;\d\a   \2502                        ^\a   \2575 \a   assets\\scss\\layouts\\_navbar.scss 4:23  @import\a   assets\\scss\\main.scss 9:9              root stylesheet";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
+
+a {
+  text-decoration: none;
+}
+
+.navbar-main {
+  background-color: #003459;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 500;
+}
+
+.navbar-main > a {
+  text-decoration: none;
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */
