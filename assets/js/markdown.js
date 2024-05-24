@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let markdownContent = '';
-alert("welcome")
+
     function generateMarkdown() {
         const title = $('#codeTitle').val();
         const description = $('#codedescription').val();
